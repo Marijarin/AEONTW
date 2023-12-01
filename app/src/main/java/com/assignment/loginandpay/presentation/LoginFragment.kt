@@ -32,6 +32,9 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 viewModel.authenticated.collectLatest {
                     if (it) {
                         findNavController().navigate(R.id.action_loginFragment_to_paymentsFragment)
+                    } else {
+                        binding.loginInput.textField = ""
+                        binding.password.textField = ""
                     }
                 }
             }

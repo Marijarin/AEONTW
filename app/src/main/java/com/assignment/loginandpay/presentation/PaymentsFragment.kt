@@ -11,6 +11,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.assignment.loginandpay.R
 import com.assignment.loginandpay.databinding.FragmentPaymentsBinding
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -29,7 +30,13 @@ class PaymentsFragment : Fragment(R.layout.fragment_payments) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.payments.collectLatest {
-                    paymentsAdapter.submitList(it)
+                    if (it.isNotEmpty()) {
+                        paymentsAdapter.submitList(it)
+                    } else {
+                        Snackbar
+                            .make(binding.topMaterialTB, "Failed", Snackbar.LENGTH_LONG)
+                            .show()
+                    }
                 }
             }
         }
@@ -53,6 +60,7 @@ class PaymentsFragment : Fragment(R.layout.fragment_payments) {
                     dialog.show()
                     true
                 }
+
                 else -> {
                     false
                 }

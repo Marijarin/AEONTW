@@ -30,7 +30,10 @@ class PaymentRepositoryImpl @Inject constructor(
                 throw Error(response.message())
             }
             val paymentsDTO = response.body() ?: throw throw Error(response.message())
-            return paymentsDTO.payments.map { it.toPayment() }
+            if (paymentsDTO.success) {
+                return paymentsDTO.payments.map { it.toPayment() }
+            }
+            return emptyList()
         } catch (e: IOException) {
             throw e.fillInStackTrace()
         } catch (e: Exception) {
