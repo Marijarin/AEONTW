@@ -32,10 +32,6 @@ class PaymentsFragment : Fragment(R.layout.fragment_payments) {
                 viewModel.payments.collectLatest {
                     if (it.isNotEmpty()) {
                         paymentsAdapter.submitList(it)
-                    } else {
-                        Snackbar
-                            .make(binding.topMaterialTB, "Failed", Snackbar.LENGTH_LONG)
-                            .show()
                     }
                 }
             }
