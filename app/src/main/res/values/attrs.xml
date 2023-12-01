@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="InputLayoutView">
+        <attr name="type" format="enum">
+            <enum name="text" value="1" />
+            <enum name="password" value="2" />
+        </attr>
+        <attr name="hint" format="string" />
+    </declare-styleable>
+</resources>

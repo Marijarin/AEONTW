@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">LoginAndPay</string>
+    <string name="sign_in">Войти</string>
+    <string name="forget_password">Забыли пароль?</string>
+    <string name="auth_title">Вход</string>
+    <string name="login_text_hint">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="payments">Платежи</string>
+    <string name="log_out">Выйти</string>
+    <string name="not_empty">Надо заполнить</string>
+    <string name="login">demo</string>
+    <string name="pw">12345</string>
+    <string name="sum">Сумма</string>
+    <string name="date">Дата создания</string>
+    <string name="error_hint">Обязательное поле</string>
+    <string name="want_to_logout">Хотите выйти?</string>
+    <string name="approve">Подтвердите выход</string>
+    <string name="no">Нет</string>
+    <string name="yes">Да</string>
+</resources>
