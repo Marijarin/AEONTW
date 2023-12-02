@@ -22,7 +22,9 @@ class AuthRepositoryImpl @Inject constructor(
                 throw Error(response.message())
             }
             val result = response.body() ?: throw Error(response.message())
-            writeToken(result.toServerResult())
+            if(result.success) {
+                writeToken(result.toServerResult())
+            }
         } catch (e: IOException) {
             throw e.fillInStackTrace()
         } catch (e: Exception) {

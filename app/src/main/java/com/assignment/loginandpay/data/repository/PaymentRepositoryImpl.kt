@@ -8,6 +8,7 @@ import com.assignment.loginandpay.domain.repository.PaymentRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.IOException
 import javax.inject.Inject
+
 class PaymentRepositoryImpl @Inject constructor(
     private val apiService: ApiService,
     @ApplicationContext
@@ -36,9 +37,10 @@ class PaymentRepositoryImpl @Inject constructor(
             throw e.fillInStackTrace()
         }
     }
+
     override fun deleteToken() {
         with(prefs.edit()) {
-            putString("token", "")
+            clear()
             apply()
         }
     }

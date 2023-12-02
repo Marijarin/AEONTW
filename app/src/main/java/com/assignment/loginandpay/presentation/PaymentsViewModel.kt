@@ -23,7 +23,8 @@ class PaymentsViewModel @Inject constructor(
         _payments.value = repository.getAll()
     }
 
-    fun logout() {
+    fun logout() = viewModelScope.launch {
         repository.deleteToken()
+        _payments.value = emptyList()
     }
 }
