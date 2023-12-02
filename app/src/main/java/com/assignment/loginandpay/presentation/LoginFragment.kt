@@ -10,6 +10,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.assignment.loginandpay.R
 import com.assignment.loginandpay.databinding.FragmentLoginBinding
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -30,6 +31,11 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                 viewModel.authenticated.collectLatest {
                     if (it) {
                         findNavController().navigate(R.id.action_loginFragment_to_paymentsFragment)
+                    } else {
+                        if (binding.loginInput.textField.isNotEmpty() && binding.password.textField.isNotEmpty()) {
+                            Snackbar.make(binding.root, "Not authenticated", Snackbar.LENGTH_SHORT)
+                                .show()
+                        }
                     }
                 }
             }

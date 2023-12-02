@@ -29,8 +29,9 @@ class PaymentRepositoryImpl @Inject constructor(
             val paymentsDTO = response.body() ?: throw throw Error(response.message())
             if (paymentsDTO.success) {
                 return paymentsDTO.payments.map { it.toPayment() }
+            } else {
+                return emptyList()
             }
-            return emptyList()
         } catch (e: IOException) {
             throw e.fillInStackTrace()
         } catch (e: Exception) {

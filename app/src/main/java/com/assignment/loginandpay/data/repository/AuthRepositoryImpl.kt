@@ -15,15 +15,18 @@ class AuthRepositoryImpl @Inject constructor(
     private val context: Context
 ) : AuthRepository {
     private val prefs = context.getSharedPreferences("auth", Context.MODE_PRIVATE)
-    override suspend fun login(login: String, pw: String) {
+    override suspend fun login(login: String, pw: String): Boolean {
         try {
             val response = apiService.login(login, pw)
             if (!response.isSuccessful) {
                 throw Error(response.message())
             }
             val result = response.body() ?: throw Error(response.message())
-            if(result.success) {
+            return if(result.success) {
                 writeToken(result.toServerResult())
+                true
+            } else {
+                false
             }
         } catch (e: IOException) {
             throw e.fillInStackTrace()

@@ -19,8 +19,7 @@ class LoginViewModel @Inject constructor(
 
     fun login (login: String, pw:String) = viewModelScope.launch {
             try {
-                repository.login(login, pw)
-                _authenticated.value = true
+                _authenticated.value = repository.login(login, pw)
             } catch (e: Exception) {
                 _authenticated.value = false
                Log.w("LoginVM", "log in failed")
