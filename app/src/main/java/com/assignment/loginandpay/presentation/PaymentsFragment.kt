@@ -11,7 +11,6 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
 import com.assignment.loginandpay.R
 import com.assignment.loginandpay.databinding.FragmentPaymentsBinding
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -56,7 +55,6 @@ class PaymentsFragment : Fragment(R.layout.fragment_payments) {
                     dialog.show()
                     true
                 }
-
                 else -> {
                     false
                 }

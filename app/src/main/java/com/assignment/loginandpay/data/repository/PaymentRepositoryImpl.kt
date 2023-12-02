@@ -1,17 +1,13 @@
 package com.assignment.loginandpay.data.repository
 
 import android.content.Context
-import com.assignment.loginandpay.data.dto.PaymentsDTO
 import com.assignment.loginandpay.data.dto.toPayment
 import com.assignment.loginandpay.data.network.ApiService
 import com.assignment.loginandpay.domain.model.Payment
 import com.assignment.loginandpay.domain.repository.PaymentRepository
-import com.google.gson.Gson
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.IOException
 import javax.inject.Inject
-
-
 class PaymentRepositoryImpl @Inject constructor(
     private val apiService: ApiService,
     @ApplicationContext

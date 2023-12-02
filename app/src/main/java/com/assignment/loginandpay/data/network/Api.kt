@@ -1,8 +1,7 @@
 package com.assignment.loginandpay.data.network
 
-import com.assignment.loginandpay.data.dto.ServerResultDTO
-import com.assignment.loginandpay.data.dto.PaymentDTO
 import com.assignment.loginandpay.data.dto.PaymentsDTO
+import com.assignment.loginandpay.data.dto.ServerResultDTO
 import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

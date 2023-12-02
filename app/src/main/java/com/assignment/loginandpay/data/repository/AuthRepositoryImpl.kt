@@ -1,7 +1,6 @@
 package com.assignment.loginandpay.data.repository
 
 import android.content.Context
-import com.assignment.loginandpay.data.dto.ServerResultDTO
 import com.assignment.loginandpay.data.dto.toServerResult
 import com.assignment.loginandpay.data.network.ApiService
 import com.assignment.loginandpay.domain.model.ServerResult
@@ -9,7 +8,6 @@ import com.assignment.loginandpay.domain.repository.AuthRepository
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.IOException
 import javax.inject.Inject
-
 
 class AuthRepositoryImpl @Inject constructor(
     private val apiService: ApiService,

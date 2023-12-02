@@ -18,7 +18,6 @@
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
             app:menu="@menu/top_app_bar"
-            app:navigationIcon="@drawable/left_arrow"
             app:title="@string/payments"
             app:titleTextColor="@color/black" />
     </com.google.android.material.appbar.AppBarLayout>

@@ -14,7 +14,7 @@ import javax.inject.Inject
 class LoginViewModel @Inject constructor(
     private val repository: AuthRepository
 ) : ViewModel() {
-    private val _authenticated = MutableStateFlow<Boolean>(false)
+    private val _authenticated = MutableStateFlow(false)
     val authenticated = _authenticated.asStateFlow()
 
     fun login (login: String, pw:String) = viewModelScope.launch {
